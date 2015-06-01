@@ -1,0 +1,152 @@
+/*border box layout*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*container for the whole website*/
+.web-container{
+  max-width: 500px;
+  position: relative;
+}
+
+/*main container for content*/
+.main-container{
+  z-index: 1;
+  position: relative;
+}
+
+/*container for the nav*/
+.nav-menu-wrap {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 65%;
+  -webkit-transition: all 450ms ease-in-out;
+  -moz-transition: all 450ms ease-in-out;
+  transition: all 450ms ease-in-out;
+  z-index: 3;
+  -moz-transform: translate3d(-100%,0px,0px) rotate(90deg);
+  -webkit-transform: translate3d(-100%,0px,0px) rotate(90deg);
+  -ms-transform: translate(-100%,0%) rotate(90deg);
+  -o-transform: translate(-100%,0%) rotate(90deg);
+  transform: translate3d(-100%,0px,0px) rotate(90deg);
+  -moz-transform-origin: 0% 0%;
+  -webkit-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+.nav-menu-wrap.active{
+  -moz-transform: translate3d(0%,0px,0px) rotate(0deg);
+  -webkit-transform: translate3d(0%,0px,0px) rotate(0deg);
+  -ms-transform: translate(0%,0%) rotate(0deg);
+  -o-transform: translate(0%,0%) rotate(0deg);
+  transform: translate3d(0%,0px,0px) rotate(0deg);
+}
+
+/*nav menu background*/
+.nav-menu-background{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  background: rgba(0,0,0,0.75);
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in-out;
+  -moz-transition: opacity 400ms ease-in-out;
+  -o-transition: opacity 400ms ease-in-out;
+  transition: opacity 400ms ease-in-out;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden; 
+  -moz-transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+  z-index: 0;
+}
+.nav-menu-background.active{
+  opacity: 1;
+  z-index: 2;
+}
+
+.menu {
+  margin: 0px;
+  padding: 0px;
+  height: auto;
+}
+
+.nav-menu {
+  position: relative;
+  top: 0px;
+  width: 100%;
+  height:100%;
+  overflow:hidden;
+  overflow-y:auto;
+  background: #eee;
+}
+.nav-menu li {
+  list-style-type: none;
+  display: block;
+  position: relative;
+}
+.nav-menu li > a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-top: solid 1px #ccc;
+  position: relative;
+  background: #eee;
+  -moz-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.nav-menu li > a:hover,
+.nav-menu li > a:active{
+  background: #ccc;
+}
+
+/*Nav menu toggle*/
+.nav-menu-toggle {
+  border: solid 1px #ddd;
+  background: #ccc;
+  height: 35px;
+  width: 35px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 15px;
+  z-index: 999;
+}
+
+
+
+.nav-menu-toggle .toggle {
+  color: #fff;
+  line-height: 35px;
+  font-size: 150%;
+}
+
+/*Close menu items*/
+.nav-menu .close div{
+  padding: 10px 15px;
+  cursor: pointer;
+  background: #ccc;
+  -moz-transition: all 300ms ease;
+  -webkit-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+.nav-menu .close div:hover,
+.nav-menu .close div:active{
+  background: #aaa;
+}
+.nav-menu .close div i{
+  float: right;
+}
